@@ -330,7 +330,7 @@ export default function Home() {
                 >
                   <Quote className="w-8 h-8 text-[#076062] mb-4" />
                   <p className="text-lg leading-relaxed mb-6 font-serif italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex items-center gap-2">
                     <div className="flex">
@@ -383,7 +383,7 @@ export default function Home() {
                 Este proceso no va de hacer más. Va de hacer mejor. Con estrategia, con claridad y con alguien que ya lo ha vivido.
               </p>
               <p className="text-xl leading-relaxed font-bold">
-                Si esto te está resonando, no lo guardes para "otro momento". Escríbeme y lo hablamos sin compromiso.
+                Si esto te está resonando, no lo guardes para &ldquo;otro momento&rdquo;. Escríbeme y lo hablamos sin compromiso.
               </p>
             </motion.div>
 
