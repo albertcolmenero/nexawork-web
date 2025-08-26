@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Star, CheckCircle, Users, Target, Award } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
 export default function LeadMagnetPage() {
@@ -16,7 +16,7 @@ export default function LeadMagnetPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentVideo, setCurrentVideo] = useState<any>(null)
+  const [currentVideo, setCurrentVideo] = useState<typeof videoTestimonials[0] | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
@@ -37,7 +37,7 @@ export default function LeadMagnetPage() {
     setIsSubmitted(true)
   }
 
-  const openVideoModal = (video: any) => {
+  const openVideoModal = (video: typeof videoTestimonials[0]) => {
     setCurrentVideo(video)
     setIsModalOpen(true)
   }
@@ -109,23 +109,7 @@ export default function LeadMagnetPage() {
     }
   ]
 
-  const features = [
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Análisis Personalizado",
-      description: "Cada resultado es único y está basado en tus respuestas específicas"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Miles de Casos de Éxito",
-      description: "Más de 5,000 personas han encontrado su profesión ideal con nuestro método"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Método Probado",
-      description: "Desarrollado por expertos en recursos humanos y psicología laboral"
-    }
-  ]
+
 
   if (isSubmitted) {
     return (
