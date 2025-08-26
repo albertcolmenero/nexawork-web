@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Star, CheckCircle, Users, Target, Award } from 'lucide-react'
 import Image from 'next/image'
 
@@ -15,6 +15,8 @@ export default function LeadMagnetPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentVideo, setCurrentVideo] = useState<any>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
@@ -35,24 +37,75 @@ export default function LeadMagnetPage() {
     setIsSubmitted(true)
   }
 
-  const testimonials = [
+  const openVideoModal = (video: any) => {
+    setCurrentVideo(video)
+    setIsModalOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsModalOpen(false)
+    setCurrentVideo(null)
+  }
+
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isModalOpen) {
+        closeVideoModal()
+      }
+    }
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscKey)
+      document.body.style.overflow = 'hidden' // Prevent background scrolling
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isModalOpen])
+
+  const videoTestimonials = [
     {
-      name: "María González",
-      role: "Ahora Consultora Digital",
-      text: "Pensaba que no tenía habilidades especiales. El test me ayudó a descubrir talentos que ni sabía que tenía. Ahora trabajo en lo que me apasiona.",
-      rating: 5
+      id: 1,
+      name: "Eloi",
+      role: "",
+      youtubeId: "4h5BEJ9XhjE", // Mock YouTube ID - replace with real one
+      thumbnail: "/1.png", // Local image from public folder
+      duration: ""
     },
     {
-      name: "Carlos Ruiz",
-      role: "Freelancer de Marketing",
-      text: "En 3 minutos descubrí más sobre mis capacidades que en años de trabajo tradicional. Fue el punto de inflexión que necesitaba.",
-      rating: 5
+      id: 2,
+      name: "Marta",
+      role: "",
+      youtubeId: "f4wrCuGjrNg", // Mock YouTube ID - replace with real one
+      thumbnail: "/4.png", // Local image from public folder
+      duration: ""
     },
     {
-      name: "Ana Martín",
-      role: "Diseñadora UX/UI",
-      text: "El test reveló habilidades ocultas que tenía pero que nunca había valorado. Ahora tengo una carrera que realmente me llena.",
-      rating: 5
+      id: 3,
+      name: "Palote",
+      role: "",
+      youtubeId: "JOcZ_Na-x50", // Mock YouTube ID - replace with real one
+      thumbnail: "/5.png", // Local image from public folder
+      duration: ""
+    },
+    {
+      id: 4,
+      name: "Judith",
+      role: "",
+      youtubeId: "0IaBZAt_xIs", // Mock YouTube ID - replace with real one
+      thumbnail: "/3.png", // Local image from public folder
+      duration: ""
+    },
+    {
+      id: 5,
+      name: "Javi",
+      role: "",
+      youtubeId: "NvuDZrbXCpU", // Mock YouTube ID - replace with real one
+      thumbnail: "/2.png", // Local image from public folder
+      duration: ""
     }
   ]
 
@@ -76,7 +129,7 @@ export default function LeadMagnetPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#efede1] via-white to-[#efede1] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -98,19 +151,8 @@ export default function LeadMagnetPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#efede1] via-white to-[#efede1]">
-      {/* Header with Logo */}
-      <header className="w-full py-6 px-4">
-        <div className="max-w-6xl mx-auto flex justify-center">
-          <Image
-            src="/nexasinfondo.png"
-            alt="Nexawork Logo"
-            width={400}
-            height={200}
-            className="h-20 w-auto"
-          />
-        </div>
-      </header>
+    <div className="min-h-screen bg-white">
+
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
@@ -122,21 +164,19 @@ export default function LeadMagnetPage() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#333333] mb-8 leading-tight font-spartan"
           >
-            Descubre qué profesión digital encaja contigo según tus habilidades reales y da el giro que necesitas en tu vida laboral.
+            DESCUBRE qué profesión digital encaja contigo según tus HABILIDADES REALES y da el giro que necesitas en tu VIDA LABORAL.
           </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4 mb-12"
+            className="space-y-4 mb-12 bg-[#076062] text-white p-8 rounded-2xl"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#076062] flex items-center justify-center gap-3">
-              <CheckCircle className="w-8 h-8 text-green-500" />
+            <h2 className="text-2xl md:text-3xl font-semibold text-center">
               Test exprés de 3 minutos
             </h2>
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#076062] flex items-center justify-center gap-3">
-              <Star className="w-8 h-8 text-yellow-500" />
+            <h2 className="text-2xl md:text-3xl font-semibold text-center">
               Creado específicamente para descubrir habilidades OCULTAS
             </h2>
           </motion.div>
@@ -223,7 +263,7 @@ export default function LeadMagnetPage() {
                 disabled={isSubmitting}
                 className="w-full bg-[#076062] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#065a5c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Enviando...' : 'QUIERO MI TEST GRATUITO'}
+                {isSubmitting ? 'Enviando...' : 'Descubre tus habilidades OCULTAS'}
               </button>
             </form>
 
@@ -232,28 +272,21 @@ export default function LeadMagnetPage() {
             </p>
           </motion.div>
 
-          {/* Features Section */}
+          {/* Hero Image Section */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
+            className="flex justify-center"
           >
-            {features.map((feature, index) => (
-              <div key={index} className="flex gap-4 p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-[#076062] flex-shrink-0">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-[#333333] mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="text-gray-600">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <Image
+              src="/test-express-hero.png"
+              alt="Test Express Hero - Descubre tus habilidades"
+              width={375}
+              height={500}
+              className="max-w-md h-auto rounded-2xl "
+              priority
+            />
           </motion.div>
         </div>
 
@@ -262,22 +295,46 @@ export default function LeadMagnetPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mt-20 mb-16 text-center"
+          className="mt-20 mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-8">
-            Sobre Nosotros
+          <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-12 text-center">
+            Soy Carlos Camino 
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Somos expertos en reinvención profesional con más de 10 años de experiencia ayudando a personas a descubrir sus verdaderas habilidades y encontrar su profesión digital ideal.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Nuestro método único combina psicología laboral, análisis de habilidades y conocimiento profundo del mercado digital para ofrecerte resultados precisos y actionables. No se trata de cambiar por cambiar, sino de encontrar lo que realmente encaja contigo.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Aunque la mayoría me conoce más por mi primer apellido, García, mi segundo es Camino. En gallego se escribe Camiño, que es de donde viene mi familia.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Pasé 14 años en Decathlon, de vendedor a directivo, liderando equipos de más de 100 personas y gestionando proyectos de hasta 20 millones de euros. En esos años descubrí mi verdadera pasión: la selección de talento, conocer a las personas y acompañar tanto su desarrollo personal como el mío propio.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Y por eso creé Nexawork: para ayudar a personas que se sienten atrapadas en trabajos que no les llenan a descubrir sus talentos naturales y transformarlos en profesiones digitales reales, alineadas con lo que quieren y con el estilo de vida que buscan.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                No vendo humo ni promesas fáciles. He creado un programa estructurado, probado y diseñado para que en cuestión de semanas tengas claridad absoluta sobre quién eres, qué se te da bien y en qué profesión digital puedes reinventarte.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Si quieres dar el paso, aquí vas a encontrar las herramientas, el acompañamiento y la experiencia para dejar de conformarte con un trabajo que no encaja contigo y empezar a construir una vida profesional que sí lo haga.
+              </p>
+            </div>
+            
+            {/* Right Column - Image */}
+            <div className="flex justify-center">
+              <Image
+                src="/carloscamino.JPG"
+                alt="Carlos García Camiño - Fundador de Nexawork"
+                width={400}
+                height={500}
+                className="w-full max-w-sm h-auto rounded-2xl shadow-lg"
+                priority
+              />
+            </div>
           </div>
         </motion.section>
 
-        {/* Testimonials Section */}
+        {/* Video Testimonials Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -288,31 +345,90 @@ export default function LeadMagnetPage() {
             Lo que dicen nuestros usuarios
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-5 gap-4 lg:gap-6">
+            {videoTestimonials.map((video, index) => (
               <motion.div
-                key={index}
+                key={video.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
+                className="bg-white rounded-2xl  overflow-hidden cursor-pointer group"
+                onClick={() => openVideoModal(video)}
               >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+                {/* Video Thumbnail */}
+                <div className="relative bg-gray-200">
+                  <Image
+                    src={video.thumbnail}
+                    alt={`Testimonio de ${video.name}`}
+                    width={400}
+                    height={600}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  
+                  {/* Play Button Overlay*/}
+                  <div className="absolute inset-0  bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                    <div className="w-12 h-12 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-0 h-0 border-l-[12px] border-l-[#076062] border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                    </div>
+                  </div>
+                   
+                  
                 </div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <div className="border-t pt-4">
-                  <p className="font-semibold text-[#333333]">{testimonial.name}</p>
-                  <p className="text-sm text-[#076062]">{testimonial.role}</p>
-                </div>
+                
+                
               </motion.div>
             ))}
           </div>
         </motion.section>
+
+        {/* Video Modal */}
+        {isModalOpen && currentVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+            onClick={closeVideoModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeVideoModal}
+                className="absolute top-4 right-4 z-10 w-8 h-8 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-75 transition-colors"
+              >
+                ✕
+              </button>
+              
+              {/* YouTube Video */}
+              <div className="relative aspect-video">
+                <iframe
+                  src={`https://www.youtube.com/embed/${currentVideo.youtubeId}?autoplay=1&modestbranding=1&rel=0&showinfo=0`}
+                  title={`Testimonio de ${currentVideo.name}`}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              
+              {/* Video Info */}
+              <div className="p-6">
+                <h3 className="font-semibold text-[#333333] text-xl mb-2">
+                  {currentVideo.name}
+                </h3>
+                <p className="text-[#076062]">
+                  {currentVideo.role}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
 
         {/* Final CTA */}
         <motion.div
@@ -325,7 +441,7 @@ export default function LeadMagnetPage() {
             ¿Listo para descubrir tu profesión digital ideal?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Miles de personas ya han transformado su vida laboral. Tú puedes ser la siguiente.
+            Cientos de personas ya han transformado su vida laboral. Tú puedes ser la siguiente.
           </p>
           <button
             onClick={() => document.getElementById('fullName')?.scrollIntoView({ behavior: 'smooth' })}
