@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
-export default function LeadMagnetPage() {
+export default function TallerPage() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -124,10 +124,10 @@ export default function LeadMagnetPage() {
             ¡Gracias por registrarte!
           </h2>
           <p className="text-gray-600 mb-6">
-            Te hemos enviado el test a tu email. Revisa tu bandeja de entrada y también la carpeta de spam.
+            Te hemos enviado los detalles del taller a tu email. Revisa tu bandeja de entrada y también la carpeta de spam.
           </p>
           <p className="text-sm text-gray-500">
-            En menos de 3 minutos descubrirás qué profesión digital encaja contigo.
+            En 2 horas tendrás claridad total sobre tu camino digital y un plan para los próximos 90 días.
           </p>
         </motion.div>
       </div>
@@ -148,7 +148,7 @@ export default function LeadMagnetPage() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#333333] mb-8 leading-tight font-spartan"
           >
-            DESCUBRE qué profesión digital encaja contigo según tus HABILIDADES REALES y da el giro que necesitas en tu VIDA LABORAL.
+            Cómo dejar de sentirte perdido en tu trabajo y diseñar en 2 horas tu hoja de ruta para entrar al mundo digital en solo 90 días
           </motion.h1>
 
           <motion.div
@@ -157,14 +157,81 @@ export default function LeadMagnetPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-4 mb-12 bg-[#076062] text-white p-8 rounded-2xl"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-center">
-              Test exprés de 3 minutos
-            </h2>
-            <h2 className="text-2xl md:text-3xl font-semibold text-center">
-              Creado específicamente para descubrir habilidades OCULTAS
-            </h2>
+            <p className="text-xl md:text-2xl font-semibold text-center">
+              Sin tener que dejar tu empleo ni dar saltos al vacío.
+            </p>
+            <p className="text-xl md:text-2xl font-semibold text-center">
+              Sin necesidad de saber a qué te quieres dedicar.
+            </p>
           </motion.div>
         </section>
+
+        {/* Benefits Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
+              ¿Qué conseguirás en este taller?
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl shadow-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-[#076062] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-bold text-[#333333] mb-4">
+                Sistema probado
+              </h3>
+              <p className="text-gray-700">
+                Desbloquearás el sistema probado para identificar tus habilidades y crear tu plan de transición profesional al mundo digital
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl shadow-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-[#076062] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-bold text-[#333333] mb-4">
+                Método IAD
+              </h3>
+              <p className="text-gray-700">
+                Aplicarás el Método "Integración, Análisis, Desarrollo" con el que identificarás tus habilidades OCULTAS (las que te harán ganar MUCHO dinero)
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl shadow-xl p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-[#076062] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-bold text-[#333333] mb-4">
+                Hoja de ruta clara
+              </h3>
+              <p className="text-gray-700">
+                Entenderás que PASOS debes dar para cambiar tu vida laboral y vivir del digital en 90 días
+              </p>
+            </motion.div>
+          </div>
+        </motion.section>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Form Section */}
@@ -175,7 +242,7 @@ export default function LeadMagnetPage() {
             className="bg-white rounded-2xl shadow-xl p-8"
           >
             <h3 className="text-2xl font-bold text-[#333333] mb-6 text-center">
-              Accede GRATIS a tu test personalizado
+              Inscríbete GRATIS al taller de 2 horas
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -247,7 +314,7 @@ export default function LeadMagnetPage() {
                 disabled={isSubmitting}
                 className="w-full bg-[#076062] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#065a5c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Enviando...' : 'Descubre tus habilidades OCULTAS'}
+                {isSubmitting ? 'Enviando...' : 'RESERVAR MI PLAZA'}
               </button>
             </form>
 
@@ -265,7 +332,7 @@ export default function LeadMagnetPage() {
           >
             <Image
               src="/test-express-hero.png"
-              alt="Test Express Hero - Descubre tus habilidades"
+              alt="Taller Digital - Diseña tu hoja de ruta en 2 horas"
               width={375}
               height={500}
               className="max-w-md h-auto rounded-2xl "
@@ -424,7 +491,7 @@ export default function LeadMagnetPage() {
           className="text-center bg-[#076062] text-white rounded-2xl p-12"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            ¿Listo para descubrir tu profesión digital ideal?
+            ¿Listo para diseñar tu hoja de ruta digital en 2 horas?
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Cientos de personas ya han transformado su vida laboral. Tú puedes ser la siguiente.
@@ -433,7 +500,7 @@ export default function LeadMagnetPage() {
             onClick={() => document.getElementById('fullName')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-white text-[#076062] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
           >
-            EMPEZAR MI TEST AHORA
+            RESERVAR MI PLAZA
           </button>
         </motion.div>
       </main>
