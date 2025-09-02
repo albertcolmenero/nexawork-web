@@ -210,7 +210,7 @@ export default function TallerPage() {
                 Método IAD
               </h3>
               <p className="text-gray-700">
-                Aplicarás el Método "Integración, Análisis, Desarrollo" con el que identificarás tus habilidades OCULTAS (las que te harán ganar MUCHO dinero)
+                Aplicarás el Método &quot;Integración, Análisis, Desarrollo&quot; con el que identificarás tus habilidades OCULTAS (las que te harán ganar MUCHO dinero)
               </p>
             </motion.div>
 
