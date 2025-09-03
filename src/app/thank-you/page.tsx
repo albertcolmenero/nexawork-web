@@ -29,14 +29,26 @@ export default function ThankYouPage() {
 
           {/* Call to action */}
           <div className="text-white text-center mb-6 text-lg font-semibold">
-            👉 HAZ CLIC AQUÍ 👈
+            <a
+              href="https://chat.whatsapp.com/CG5S5YGR95o4JHB0xWCKaG?mode=ems_wa_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-300 transition-colors"
+            >
+              👉 HAZ CLIC AQUÍ 👈
+            </a>
           </div>
 
           {/* WhatsApp button */}
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center w-full">
+          <a
+            href="https://chat.whatsapp.com/CG5S5YGR95o4JHB0xWCKaG?mode=ems_wa_t"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center w-full"
+          >
             <span className="mr-2">📱</span>
             😊 Quiero asegurar mi plaza
-          </button>
+          </a>
         </div>
       </div>
     </div>
