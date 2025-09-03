@@ -47,10 +47,13 @@ export default function ThankYouPage() {
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center w-full"
           >
             <span className="mr-2">📱</span>
-            😊 Quiero asegurar mi plaza
-          </a>
+                      😊 Quiero asegurar mi plaza
+        </a>
         </div>
       </div>
+
+      {/* Facebook Pixel Tracking */}
+      <script dangerouslySetInnerHTML={{__html: "fbq('track', 'CompleteRegistration');"}} />
     </div>
   );
 }
