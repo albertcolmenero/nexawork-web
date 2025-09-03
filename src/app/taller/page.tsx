@@ -686,7 +686,7 @@ export default function TallerPage() {
             className="flex justify-center"
           >
             <Image
-              src="/test-express-hero.png"
+              src="/MOCKUPPORTATIL.png"
               alt="Taller Digital - Diseña tu hoja de ruta en 2 horas"
               width={375}
               height={500}
