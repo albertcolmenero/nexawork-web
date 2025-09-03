@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { League_Spartan, Libre_Baskerville } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
 const leagueSpartan = League_Spartan({
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} ${libreBaskerville.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
