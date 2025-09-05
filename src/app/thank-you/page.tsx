@@ -1,7 +1,17 @@
+'use client'
+
 import React from 'react';
 import Script from 'next/script';
 
+// Type declaration for Facebook Pixel
+declare global {
+  interface Window {
+    fbq: (command: string, event?: string) => void;
+  }
+}
+
 export default function ThankYouPage() {
+
   return (
     <>
       {/* Meta Pixel Code */}
@@ -20,6 +30,7 @@ export default function ThankYouPage() {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1316557306362606');
             fbq('track', 'PageView');
+            fbq('track', 'CompleteRegistration');
           `,
         }}
       />
@@ -84,8 +95,6 @@ export default function ThankYouPage() {
         </div>
       </div>
 
-      {/* Facebook Pixel Tracking - CompleteRegistration */}
-      <script dangerouslySetInnerHTML={{__html: "fbq('track', 'CompleteRegistration');"}} />
     </div>
     </>
   );
