@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Quote, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, Quote, Star } from "lucide-react";
 
 export default function Home() {
   return (
@@ -21,57 +21,57 @@ export default function Home() {
                }}>
             <div>
               {/* Centered Logo */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
                 className="h-20 flex items-center justify-center overflow-hidden mb-6"
-              >
-                <Image
-                  src="/nexasinfondo.png"
-                  alt="Nexawork Logo"
+                >
+                  <Image
+                    src="/nexasinfondo.png"
+                    alt="Nexawork Logo"
                   width={400}
                   height={160}
-                  priority
-                />
-              </motion.div>
-
+                    priority
+                  />
+                </motion.div>
+                
               {/* Hero Text Content - Left Aligned */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#323232] leading-tight text-left max-w-5xl"
-                style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-              >
-                Cómo dejar de sentirte perdido
-                en tu trabajo y diseñar un plan{" "}
-                <span className="text-[#468586]">real</span>{" "}
-                para entrar al mundo
-                <br />
-                <span className="text-[#468586]">digital en 90 días</span>
-              </motion.h1>
+                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                >
+                  Cómo dejar de sentirte perdido
+                  en tu trabajo y diseñar un plan{" "}
+                  <span className="text-[#468586]">real</span>{" "}
+                  para entrar al mundo
+                  <br />
+                  <span className="text-[#468586]">digital en 90 días</span>
+                </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-lg md:text-xl text-[#323232] leading-relaxed text-left max-w-5xl mt-6"
-                style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-              >
-                Sin dejar tu empleo ni dar <strong>saltos al vacío</strong>. Con un <strong>método probado</strong>{" "}
+                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                >
+                  Sin dejar tu empleo ni dar <strong>saltos al vacío</strong>. Con un <strong>método probado</strong>{" "}
                 <br />para descubrir tus <strong>habilidades</strong> y usarlas en tu favor.
-              </motion.p>
+                </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
                 className="mt-8 text-left"
-              >
+                >
                 <a href="https://calendly.com/javiercumen/sesion-individual" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    size="lg"
+                  <Button 
+                    size="lg" 
                     className="bg-[#468586] hover:bg-[#1d5f61] text-white text-lg px-8 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold"
                     style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
                   >
@@ -79,7 +79,7 @@ export default function Home() {
                     <ArrowRight className="ml-2" />
                   </Button>
                 </a>
-              </motion.div>
+                </motion.div>
               </div>
           </div>
         </div>
@@ -169,9 +169,11 @@ export default function Home() {
                   className="flex items-start gap-4"
                 >
                   <div className="w-8 h-8 flex-shrink-0 mt-1">
-                    <img
+                    <Image
                       src="/21.png"
                       alt="Icon"
+                      width={32}
+                      height={32}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -447,7 +449,7 @@ export default function Home() {
                 className="text-lg md:text-xl text-[#323232] leading-relaxed text-center max-w-4xl mx-auto mt-8"
                 style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
               >
-                Seguir esperando "<span className="text-[#468586]">al momento perfecto</span>" solo alarga tu <span className="text-[#468586]">vacío</span>.
+                Seguir esperando &ldquo;<span className="text-[#468586]">al momento perfecto</span>&rdquo; solo alarga tu <span className="text-[#468586]">vacío</span>.
                 <br />
                 La <span className="text-[#468586]">decisión</span> de empezar es la que <span className="text-[#468586]">cambia todo</span>.
               </motion.p>
