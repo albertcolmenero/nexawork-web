@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { League_Spartan, Libre_Baskerville } from "next/font/google";
+import { League_Spartan, Libre_Baskerville, Poppins } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
@@ -16,6 +16,12 @@ const libreBaskerville = Libre_Baskerville({
   style: ["normal", "italic"],
 });
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Nexawork - Reinvención Profesional",
   description: "Reencamina tu vida profesional. Descubre tu profesión digital ideal con acompañamiento personalizado de Carlos García Camiño.",
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${leagueSpartan.variable} ${libreBaskerville.variable} antialiased`}
+        className={`${leagueSpartan.variable} ${libreBaskerville.variable} ${poppins.variable} antialiased`}
       >
         {children}
         <Analytics />

@@ -16,6 +16,7 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-league-spartan);
   --font-serif: var(--font-libre-baskerville);
+  --font-poppins: var(--font-poppins);
 }
 
 body {

@@ -9,91 +9,131 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#efede1]/20 via-white to-[#076062]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#076062]/5 to-transparent"></div>
+      <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <Image
-                src="/nexasinfondo.png"
-                alt="Nexawork Logo"
-                width={300}
-                height={120}
-                className="mx-auto mb-8"
-                priority
-              />
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            >
-              No odias tu trabajo.{" "}
-              <span className="text-gradient">
-                Simplemente te conformaste
-              </span>{" "}
-              con uno que no encaja contigo.
-            </motion.h1>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="mb-8"
+                >
+                  <Image
+                    src="/nexasinfondo.png"
+                    alt="Nexawork Logo"
+                    width={200}
+                    height={80}
+                    className="mb-8"
+                    priority
+                  />
+                </motion.div>
+                
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-black text-[#323232] leading-tight"
+                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                >
+                  Cómo dejar de sentirte perdido
+                  <br />
+                  en tu trabajo y diseñar un plan{" "}
+                  <span className="text-[#468586]">real</span>{" "}
+                  para entrar al mundo
+                  <br />
+                  <span className="text-[#468586]">digital en 90 días</span>
+                </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-4 mb-12"
-            >
-              <h2 className="text-2xl md:text-3xl font-light text-[#47888a] font-serif">
-                Reencamina tu vida profesional
-              </h2>
-              <h2 className="text-2xl md:text-3xl font-light text-[#47888a] font-serif">
-                Recupera la ilusión profesional
-              </h2>
-              <h2 className="text-2xl md:text-3xl font-light text-[#47888a] font-serif">
-                Revitaliza tu vida profesional
-              </h2>
-            </motion.div>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-lg md:text-xl text-[#323232] leading-relaxed"
+                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                >
+                  Sin dejar tu empleo ni dar <strong>saltos al vacío</strong>. Con un <strong>método probado</strong>{" "}
+                  para descubrir tus <strong>habilidades</strong> y usarlas en tu favor.
+                </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl mb-8"
-            >
-              <div className="aspect-video bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
-                <div className="text-white text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="w-0 h-0 border-l-6 border-r-6 border-b-10 border-l-transparent border-r-transparent border-b-white ml-1"></div>
-                  </div>
-                  <p className="text-lg">Video de presentación próximamente</p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="bg-[#468586] hover:bg-[#1d5f61] text-white text-lg px-8 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold"
+                    style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                  >
+                    QUIERO DESCUBRIR MI CAMINO DIGITAL
+                    <ArrowRight className="ml-2" />
+                  </Button>
+                </motion.div>
               </div>
-              
-              <p className="text-xl md:text-2xl font-serif text-[#333333] leading-relaxed">
-                Yo también estuve ahí: con un buen sueldo, responsabilidades y cero ilusión.
-                <br />
-                Por eso hoy acompaño a personas como tú a descubrir en qué son realmente buenas
-                y a reinventarse hacia una profesión digital que sí les represente.
-                <br />
-                <strong>Sin humo. Con cabeza. Y desde lo que ya tienen dentro.</strong>
-              </p>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <Button size="lg" className="text-lg px-12 py-6 rounded-full shadow-xl transform hover:scale-105">
-                👉 QUIERO EXPLORAR MI PROFESIÓN IDEAL
-                <ArrowRight className="ml-2" />
-              </Button>
-            </motion.div>
+              {/* Right Column - Illustration */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex justify-center lg:justify-end"
+              >
+                <div className="relative w-full max-w-md">
+                  {/* Person walking illustration */}
+                  <svg
+                    viewBox="0 0 400 300"
+                    className="w-full h-auto"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Winding path */}
+                    <path
+                      d="M50 250 Q100 200 150 220 Q200 180 250 200 Q300 160 350 180"
+                      stroke="#323232"
+                      strokeWidth="3"
+                      strokeDasharray="8,4"
+                      fill="none"
+                    />
+                    
+                    {/* Signpost */}
+                    <g transform="translate(300, 160)">
+                      {/* Post */}
+                      <rect x="0" y="0" width="4" height="40" fill="#323232" />
+                      {/* Sign */}
+                      <rect x="-15" y="-8" width="30" height="16" fill="#468586" rx="2" />
+                      {/* Arrow */}
+                      <path d="M15 0 L25 0 L20 -5 Z" fill="#323232" />
+                    </g>
+                    
+                    {/* Person walking */}
+                    <g transform="translate(120, 200)">
+                      {/* Head */}
+                      <circle cx="0" cy="-25" r="12" fill="#f7f8f8" stroke="#323232" strokeWidth="2" />
+                      {/* Hair */}
+                      <path d="M-8 -35 Q0 -40 8 -35" stroke="#323232" strokeWidth="2" fill="none" />
+                      
+                      {/* Body */}
+                      <rect x="-8" y="-10" width="16" height="30" fill="#f7f8f8" stroke="#323232" strokeWidth="2" rx="2" />
+                      
+                      {/* Arms */}
+                      <line x1="-8" y1="-5" x2="-20" y2="5" stroke="#323232" strokeWidth="3" strokeLinecap="round" />
+                      <line x1="8" y1="-5" x2="20" y2="5" stroke="#323232" strokeWidth="3" strokeLinecap="round" />
+                      
+                      {/* Legs */}
+                      <line x1="-4" y1="20" x2="-8" y2="35" stroke="#323232" strokeWidth="3" strokeLinecap="round" />
+                      <line x1="4" y1="20" x2="8" y2="35" stroke="#323232" strokeWidth="3" strokeLinecap="round" />
+                      
+                      {/* Feet */}
+                      <ellipse cx="-8" cy="38" rx="4" ry="2" fill="#323232" />
+                      <ellipse cx="8" cy="38" rx="4" ry="2" fill="#323232" />
+                    </g>
+                  </svg>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
