@@ -69,7 +69,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                 className="mt-8 text-left"
                 >
-                <a href="https://calendly.com/javiercumen/sesion-individual" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/34653634942" target="_blank" rel="noopener noreferrer">
                   <Button 
                     size="lg" 
                     className="bg-[#468586] hover:bg-[#1d5f61] text-white text-lg px-8 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold"
@@ -113,13 +113,15 @@ export default function Home() {
               </p>
 
               <div className="text-center">
-                <Button
-                  size="lg"
-                  className="bg-[#468586] hover:bg-[#1d5f61] text-white text-xl px-12 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold uppercase"
-                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-                >
-                  VER CÓMO FUNCIONA
-                </Button>
+                <a href="https://wa.me/34653634942" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="bg-[#468586] hover:bg-[#1d5f61] text-white text-xl px-12 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold uppercase"
+                    style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
+                  >
+                    VER CÓMO FUNCIONA
+                  </Button>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -460,7 +462,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="mt-10 text-center"
               >
-                <a href="https://calendly.com/javiercumen/sesion-individual" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/34653634942" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-[#468586] hover:bg-[#1d5f61] text-white text-lg px-12 py-4 rounded-full shadow-xl transform hover:scale-105 font-bold uppercase"
