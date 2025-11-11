@@ -571,7 +571,7 @@ export default function TallerPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#333333] mb-8 leading-tight font-spartan"
+            className="text-5xl font-bold text-[#333333] mb-8  font-spartan"
           >
             Cómo dejar de sentirte perdido en tu trabajo y diseñar en 2 horas tu hoja de ruta para entrar al mundo digital en solo 90 días
           </motion.h1>
@@ -580,7 +580,7 @@ export default function TallerPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4 mb-12 bg-[#076062] text-white p-8 rounded-2xl"
+            className="space-y-4 mb-12 bg-[#076062] text-white p-6 rounded-2xl"
           >
             <p className="text-xl md:text-2xl font-semibold text-center">
               Sin tener que dejar tu empleo ni dar saltos al vacío.
@@ -591,6 +591,45 @@ export default function TallerPage() {
           </motion.div>
         </section>
 
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Form Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-white rounded-2xl shadow-xl p-8"
+          >
+            <h3 className="text-2xl font-bold text-[#333333] mb-6 text-center">
+              Inscríbete GRATIS al taller de 2 horas
+            </h3>
+            
+            <div id="activecampaign-form-container"></div>
+
+            <p className="text-xs text-gray-500 text-center mt-4">
+              100% gratuito. Sin spam. Puedes darte de baja cuando quieras.
+            </p>
+          </motion.div>
+
+          {/* Hero Image Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex justify-center"
+          >
+            <Image
+              src="/MOCKUPPORTATIL.png"
+              alt="Taller Digital - Diseña tu hoja de ruta en 2 horas"
+              width={375}
+              height={500}
+              className="max-w-md h-auto rounded-2xl "
+              priority
+              unoptimized
+            />
+          </motion.div>
+        </div>
+
+
         {/* Benefits Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -598,7 +637,7 @@ export default function TallerPage() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <div className="text-center mb-12">
+          <div className="text-center m-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
               ¿Qué conseguirás en este taller?
             </h2>
@@ -658,43 +697,6 @@ export default function TallerPage() {
           </div>
         </motion.section>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Form Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white rounded-2xl shadow-xl p-8"
-          >
-            <h3 className="text-2xl font-bold text-[#333333] mb-6 text-center">
-              Inscríbete GRATIS al taller de 2 horas
-            </h3>
-            
-            <div id="activecampaign-form-container"></div>
-
-            <p className="text-xs text-gray-500 text-center mt-4">
-              100% gratuito. Sin spam. Puedes darte de baja cuando quieras.
-            </p>
-          </motion.div>
-
-          {/* Hero Image Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center"
-          >
-            <Image
-              src="/MOCKUPPORTATIL.png"
-              alt="Taller Digital - Diseña tu hoja de ruta en 2 horas"
-              width={375}
-              height={500}
-              className="max-w-md h-auto rounded-2xl "
-              priority
-              unoptimized
-            />
-          </motion.div>
-        </div>
 
         {/* About Us Section */}
         <motion.section
